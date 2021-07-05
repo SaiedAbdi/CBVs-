@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h3>Home</h3><hr>
+    {% for todo in todos %}
+        <a href="{% url 'first:detail_todo' todo.slug %}">{{ todo.title }}</a>
+        <a href="{% url 'first:delete_todo' todo.id %}" class = "btn btn-danger">Delete</a>
+        <a href="{% url 'first:update_todo' todo.id %}" class = "btn btn-warning">Update</a><br><br>
+    {% endfor %}
+{% endblock %}
